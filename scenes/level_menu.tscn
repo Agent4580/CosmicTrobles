@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bfqbxgiw641lm"]
+
+[node name="Level_menu" type="Node2D" unique_id=1091212074]
+
+[node name="Control" type="Control" parent="." unique_id=14717410]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Level_1" type="Button" parent="Control" unique_id=495035412]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 155.0
+offset_bottom = 95.0
+text = "Уровень 1"
