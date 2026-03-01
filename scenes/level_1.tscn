@@ -1,3 +1,8 @@
 [gd_scene format=3 uid="uid://vmddyblv3n60"]
 
+[ext_resource type="PackedScene" uid="uid://c62jnkln56ml2" path="res://scenes/cosmonaut.tscn" id="1_014kd"]
+
 [node name="Level_1" type="Node2D" unique_id=1605324916]
+
+[node name="Cosmonaut" parent="." unique_id=263008731 instance=ExtResource("1_014kd")]
+position = Vector2(48, 32)

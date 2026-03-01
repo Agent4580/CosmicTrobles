@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c62jnkln56ml2"]
+
+[ext_resource type="Texture2D" uid="uid://dq148667vr0a7" path="res://sprites/icon.svg" id="1_dge1r"]
+[ext_resource type="Script" uid="uid://cj82mpgk7d07m" path="res://scripts/cosmonaut.gd" id="1_ehema"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ehema"]
+size = Vector2(32, 32)
+
+[node name="Cosmonaut" type="CharacterBody2D" unique_id=263008731]
+script = ExtResource("1_ehema")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1226707170]
+position = Vector2(-4.7683716e-07, -4.7683716e-07)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_dge1r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=746816376]
+shape = SubResource("RectangleShape2D_ehema")
