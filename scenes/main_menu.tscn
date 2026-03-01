@@ -13,22 +13,32 @@ offset_bottom = 40.0
 
 [node name="Play" type="Button" parent="Controler" unique_id=1667975391]
 layout_mode = 0
-offset_left = 256.0
+offset_left = 248.0
 offset_top = 64.0
-offset_right = 322.0
+offset_right = 320.0
 offset_bottom = 95.0
 scale = Vector2(2, 2)
 text = "Играть
 "
 
+[node name="Settings" type="Button" parent="Controler" unique_id=1054551573]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 192.0
+offset_right = 321.0
+offset_bottom = 223.0
+scale = Vector2(2, 2)
+text = "Настройки"
+
 [node name="Exit" type="Button" parent="Controler" unique_id=1756104790]
 layout_mode = 0
 offset_left = 256.0
 offset_top = 320.0
-offset_right = 316.0
+offset_right = 320.0
 offset_bottom = 351.0
 scale = Vector2(2, 2)
 text = "Выход
 "
 
 [connection signal="button_down" from="Controler/Play" to="." method="_on_play_button_down"]
+[connection signal="button_up" from="Controler/Exit" to="." method="_on_exit_button_up"]
