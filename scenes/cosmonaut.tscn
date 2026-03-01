@@ -1,13 +1,25 @@
 [gd_scene format=3 uid="uid://c62jnkln56ml2"]
 
 [ext_resource type="Texture2D" uid="uid://dq148667vr0a7" path="res://sprites/icon.svg" id="1_dge1r"]
-[ext_resource type="Script" uid="uid://cj82mpgk7d07m" path="res://scripts/cosmonaut.gd" id="1_ehema"]
+[ext_resource type="Script" uid="uid://bn8pfa4m6xw68" path="res://scripts/cosmonaut.gd" id="1_ehema"]
+[ext_resource type="Script" uid="uid://cvdh0k5f1lqxf" path="res://scripts/cosmonaut_gravity.gd" id="2_5cu2o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qvxfg"]
+size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ehema"]
 size = Vector2(32, 32)
 
 [node name="Cosmonaut" type="CharacterBody2D" unique_id=263008731]
 script = ExtResource("1_ehema")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1673240465]
+gravity_space_override = 3
+gravity = 400.0
+script = ExtResource("2_5cu2o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=87741262]
+shape = SubResource("RectangleShape2D_qvxfg")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1226707170]
 position = Vector2(-4.7683716e-07, -4.7683716e-07)
@@ -16,3 +28,5 @@ texture = ExtResource("1_dge1r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=746816376]
 shape = SubResource("RectangleShape2D_ehema")
+
+[connection signal="change_gravity" from="." to="Area2D" method="_on_cosmonaut_change_gravity"]
