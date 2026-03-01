@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://bfqbxgiw641lm"]
 
+[ext_resource type="Script" uid="uid://dkvpkphclci7q" path="res://scripts/level_menu.gd" id="1_yl4fo"]
+
 [node name="Level_menu" type="Node2D" unique_id=1091212074]
+script = ExtResource("1_yl4fo")
 
 [node name="Control" type="Control" parent="." unique_id=14717410]
 layout_mode = 3
@@ -15,3 +18,5 @@ offset_top = 64.0
 offset_right = 155.0
 offset_bottom = 95.0
 text = "Уровень 1"
+
+[connection signal="button_down" from="Control/Level_1" to="." method="_on_level_1_button_down"]
