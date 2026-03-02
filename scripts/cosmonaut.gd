@@ -8,17 +8,19 @@ signal change_gravity
 
 func _physics_process(delta: float) -> void:
 	# Отвечает за гравитацию.
-	if not (is_on_floor() or is_on_ceiling()):
-		velocity += get_gravity() * delta
+	
+	velocity += get_gravity() * delta
 	
 	#Смена гравитации в воздухе
 	if not (is_on_ceiling() or is_on_floor()) and Input.is_action_just_pressed("jump (change_gravity)") and can_change_gravity():
 		change_gravity.emit()
 		gravity_changing -= 1
-	
+		rotation_degrees = 180 if get_node("Area2D").get_gravity_direction()[1] == -1 else 0
+		
 	# Отвечает за прыжок.
 	if Input.is_action_just_pressed("jump (change_gravity)") and (is_on_floor() or is_on_ceiling()):
 		velocity.y = jump_force if is_on_floor() else -jump_force
+		
 	
 	if is_on_ceiling() or is_on_floor():
 		gravity_changing = 1
