@@ -20,7 +20,7 @@ size = Vector2(26, 240)
 script = ExtResource("1_rus8k")
 
 [node name="Cosmonaut" parent="." unique_id=263008731 groups=["Player"] instance=ExtResource("1_014kd")]
-position = Vector2(32, 208)
+position = Vector2(40, 224)
 
 [node name="Camera2D" type="Camera2D" parent="Cosmonaut" unique_id=517019717]
 limit_left = 0
@@ -111,7 +111,7 @@ position = Vector2(0, -1.9073486e-06)
 shape = SubResource("RectangleShape2D_rus8k")
 
 [node name="Block5" type="StaticBody2D" parent="." unique_id=908319760]
-position = Vector2(264, 32)
+position = Vector2(264, 24)
 scale = Vector2(0.5, 5.701)
 metadata/_edit_group_ = true
 
@@ -135,6 +135,20 @@ scale = Vector2(0.75, 0.13749999)
 texture = ExtResource("2_bswci")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Block6" unique_id=1839247800]
+position = Vector2(0, -1.9073486e-06)
+shape = SubResource("RectangleShape2D_rus8k")
+
+[node name="Block7" type="StaticBody2D" parent="." unique_id=800561997]
+position = Vector2(360, 215.99998)
+scale = Vector2(0.15780328, 2.824952)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Block7" unique_id=1366348593]
+position = Vector2(0, -9.536743e-07)
+scale = Vector2(0.75, 0.13749999)
+texture = ExtResource("2_bswci")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block7" unique_id=797450831]
 position = Vector2(0, -1.9073486e-06)
 shape = SubResource("RectangleShape2D_rus8k")
 
