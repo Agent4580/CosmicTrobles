@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://vmddyblv3n60"]
 
 [ext_resource type="PackedScene" uid="uid://c62jnkln56ml2" path="res://scenes/cosmonaut.tscn" id="1_014kd"]
-[ext_resource type="Script" uid="uid://6ypmvrvnc8a4" path="res://scripts/level_1.gd" id="1_rus8k"]
+[ext_resource type="Script" uid="uid://6ypmvrvnc8a4" path="res://scripts/level_1_stage_1.gd" id="1_rus8k"]
 [ext_resource type="Texture2D" uid="uid://dq148667vr0a7" path="res://sprites/icon.svg" id="2_bswci"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_014kd"]
@@ -16,7 +16,7 @@ size = Vector2(96, 17.600002)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5xbjy"]
 size = Vector2(26, 240)
 
-[node name="Level_1" type="Node2D" unique_id=1605324916]
+[node name="Level_1_stage_1" type="Node2D" unique_id=1605324916]
 script = ExtResource("1_rus8k")
 
 [node name="Cosmonaut" parent="." unique_id=263008731 groups=["Player"] instance=ExtResource("1_014kd")]
