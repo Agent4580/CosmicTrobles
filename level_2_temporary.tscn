@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c3e1dwywq02v6"]
+
+[node name="Node2D" type="Node2D" unique_id=1512956058]
+
+[node name="Control" type="Control" parent="." unique_id=1456852657]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control" unique_id=773274820]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 64.0
+offset_right = 264.0
+offset_bottom = 193.0
+text = "Извините, но дальше пока ничего нет, возможно в дальнейшем появиться больше контента"
+horizontal_alignment = 1
+autowrap_mode = 2

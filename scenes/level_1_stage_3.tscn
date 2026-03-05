@@ -201,4 +201,53 @@ position = Vector2(720, 200)
 position = Vector2(8, 20)
 shape = SubResource("RectangleShape2D_f250k")
 
+[node name="Finish_menu" type="Control" parent="." unique_id=1809950165]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 400.0
+offset_right = 720.0
+offset_bottom = 240.0
+
+[node name="ColorRect" type="ColorRect" parent="Finish_menu" unique_id=902591989]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 240.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="Finish_menu" unique_id=561272942]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 80.0
+offset_right = 232.0
+offset_bottom = 103.0
+text = "Уровень пройден"
+
+[node name="Exit" type="Button" parent="Finish_menu" unique_id=210312042]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Выйти
+"
+
+[node name="Continue" type="Button" parent="Finish_menu" unique_id=951125457]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 200.0
+offset_right = 295.0
+offset_bottom = 231.0
+text = "Продолжить"
+
+[node name="Reset" type="Button" parent="Finish_menu" unique_id=1162055505]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 200.0
+offset_right = 91.0
+offset_bottom = 231.0
+text = "Заново"
+
 [connection signal="body_entered" from="Finish" to="." method="_on_finish_body_entered"]
+[connection signal="button_up" from="Finish_menu/Exit" to="." method="_on_exit_button_up"]
+[connection signal="button_down" from="Finish_menu/Continue" to="." method="_on_continue_button_down"]
+[connection signal="button_down" from="Finish_menu/Reset" to="." method="_on_reset_button_down"]
