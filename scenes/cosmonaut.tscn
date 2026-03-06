@@ -160,7 +160,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5cu2o"]
 radius = 11.0
-height = 34.0
+height = 32.0
 
 [node name="Cosmonaut" type="CharacterBody2D" unique_id=263008731]
 script = ExtResource("1_ehema")
