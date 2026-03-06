@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c00jqh6f26kye" path="res://scripts/level_1_stage_3.gd" id="1_b4aap"]
 [ext_resource type="PackedScene" uid="uid://c62jnkln56ml2" path="res://scenes/cosmonaut.tscn" id="1_dxpom"]
 [ext_resource type="Texture2D" uid="uid://dq148667vr0a7" path="res://sprites/icon.svg" id="2_4w7b0"]
+[ext_resource type="PackedScene" uid="uid://bon4s5vtcb3dx" path="res://scenes/danger.tscn" id="4_to535"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4w7b0"]
 size = Vector2(320, 8)
@@ -126,7 +127,7 @@ shape = SubResource("RectangleShape2D_to535")
 
 [node name="Block6" type="StaticBody2D" parent="." unique_id=197289270]
 position = Vector2(552, -1.5258789e-05)
-scale = Vector2(3.7662582, 1.9427018)
+scale = Vector2(3.8114195, 1.231703)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Block6" unique_id=1221942869]
@@ -153,7 +154,7 @@ position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_to535")
 
 [node name="Block8" type="StaticBody2D" parent="." unique_id=698084874]
-position = Vector2(568, 112)
+position = Vector2(568, 80.00001)
 scale = Vector2(2, 0.75)
 metadata/_edit_group_ = true
 
@@ -167,8 +168,8 @@ position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_to535")
 
 [node name="Block9" type="StaticBody2D" parent="." unique_id=1232043979]
-position = Vector2(568, 136)
-scale = Vector2(0.75, 3.25)
+position = Vector2(568, 104.000015)
+scale = Vector2(0.7487018, 4.237536)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Block9" unique_id=1384175992]
@@ -246,6 +247,28 @@ offset_top = 200.0
 offset_right = 91.0
 offset_bottom = 231.0
 text = "Заново"
+
+[node name="Danger" parent="." unique_id=622726363 instance=ExtResource("4_to535")]
+position = Vector2(128, 208)
+
+[node name="Danger2" parent="." unique_id=1886084599 instance=ExtResource("4_to535")]
+position = Vector2(160, 96)
+scale = Vector2(0.25, 3.505)
+
+[node name="Danger3" parent="." unique_id=523370491 instance=ExtResource("4_to535")]
+position = Vector2(168, 96)
+scale = Vector2(3, 0.25)
+
+[node name="Danger4" parent="." unique_id=1647392802 instance=ExtResource("4_to535")]
+position = Vector2(256, 104)
+scale = Vector2(0.25, 4)
+
+[node name="Danger5" parent="." unique_id=1965820510 instance=ExtResource("4_to535")]
+position = Vector2(264, 208)
+scale = Vector2(9.5, 1)
+
+[node name="Danger6" parent="." unique_id=1604268203 instance=ExtResource("4_to535")]
+scale = Vector2(17.25, 0.75)
 
 [connection signal="body_entered" from="Finish" to="." method="_on_finish_body_entered"]
 [connection signal="button_up" from="Finish_menu/Exit" to="." method="_on_exit_button_up"]

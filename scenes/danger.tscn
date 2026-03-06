@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bon4s5vtcb3dx"]
+
+[ext_resource type="Script" uid="uid://b80amyt6mx68r" path="res://scripts/danger.gd" id="1_nq5mv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2aua"]
+size = Vector2(32, 32)
+
+[node name="Danger" type="Area2D" unique_id=622726363]
+script = ExtResource("1_nq5mv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1800294228]
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1255888835]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_i2aua")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

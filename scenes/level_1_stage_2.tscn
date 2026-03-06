@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bydsp73r11o6t" path="res://scripts/level_1_stage_2.gd" id="1_ma7px"]
 [ext_resource type="PackedScene" uid="uid://c62jnkln56ml2" path="res://scenes/cosmonaut.tscn" id="2_3ep5j"]
 [ext_resource type="Texture2D" uid="uid://dq148667vr0a7" path="res://sprites/icon.svg" id="3_euqm7"]
+[ext_resource type="PackedScene" uid="uid://bon4s5vtcb3dx" path="res://scenes/danger.tscn" id="4_3ep5j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eqxsl"]
 size = Vector2(456, 8)
@@ -145,8 +146,8 @@ texture = ExtResource("3_euqm7")
 shape = SubResource("RectangleShape2D_wo48x")
 
 [node name="Block8" type="StaticBody2D" parent="." unique_id=492440907]
-position = Vector2(760, 40.000004)
-scale = Vector2(1.3735086, 2.316654)
+position = Vector2(760, 176)
+scale = Vector2(1.3735086, 6.1621337)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Block8" unique_id=896509444]
@@ -178,5 +179,29 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Finish" unique_id=1129878090]
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_pbc48")
+
+[node name="Danger" parent="." unique_id=622726363 instance=ExtResource("4_3ep5j")]
+position = Vector2(272, 216)
+scale = Vector2(4.252, 0.75)
+
+[node name="Danger2" parent="." unique_id=450485051 instance=ExtResource("4_3ep5j")]
+position = Vector2(208, 0)
+scale = Vector2(4.252, 0.75)
+
+[node name="Danger3" parent="." unique_id=42294323 instance=ExtResource("4_3ep5j")]
+position = Vector2(440, 215.99998)
+scale = Vector2(5.25, 0.75)
+
+[node name="Danger4" parent="." unique_id=2043369332 instance=ExtResource("4_3ep5j")]
+position = Vector2(536, 1.5258789e-05)
+scale = Vector2(6.256, 0.754)
+
+[node name="Danger5" parent="." unique_id=1621589561 instance=ExtResource("4_3ep5j")]
+position = Vector2(784, 0)
+scale = Vector2(3.5052555, 0.755)
+
+[node name="Danger6" parent="." unique_id=661548060 instance=ExtResource("4_3ep5j")]
+position = Vector2(656, 216)
+scale = Vector2(6, 0.75)
 
 [connection signal="body_entered" from="Finish" to="." method="_on_finish_body_entered"]

@@ -158,8 +158,9 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ehema"]
-size = Vector2(32, 32)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5cu2o"]
+radius = 11.0
+height = 34.0
 
 [node name="Cosmonaut" type="CharacterBody2D" unique_id=263008731]
 script = ExtResource("1_ehema")
@@ -179,6 +180,6 @@ frame = 7
 frame_progress = 0.14854135
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=746816376]
-shape = SubResource("RectangleShape2D_ehema")
+shape = SubResource("CapsuleShape2D_5cu2o")
 
 [connection signal="change_gravity" from="." to="Area2D" method="_on_cosmonaut_change_gravity"]
