@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://c62jnkln56ml2" path="res://scenes/cosmonaut.tscn" id="1_014kd"]
 [ext_resource type="Script" uid="uid://6ypmvrvnc8a4" path="res://scripts/level_1_stage_1.gd" id="1_rus8k"]
 [ext_resource type="TileSet" uid="uid://dbfgb3ypnjp00" path="res://sprites/new_tile_set.tres" id="2_hcax5"]
+[ext_resource type="Texture2D" uid="uid://bopc0uhcdb6c3" path="res://sprites/Фон_для_game_jam.png" id="2_yte3x"]
+[ext_resource type="Texture2D" uid="uid://bc0lbi6yh267v" path="res://sprites/Задний_фон_для_game_jam.png" id="3_u0a0p"]
 [ext_resource type="PackedScene" uid="uid://bon4s5vtcb3dx" path="res://scenes/danger.tscn" id="4_hcax5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_014kd"]
@@ -19,6 +21,23 @@ size = Vector2(26, 240)
 
 [node name="Level_1_stage_1" type="Node2D" unique_id=1605324916]
 script = ExtResource("1_rus8k")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=222640196]
+scroll_scale = Vector2(0.1, 0.1)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Parallax2D" unique_id=1481339621]
+texture = ExtResource("2_yte3x")
+centered = false
+
+[node name="Background" type="Parallax2D" parent="." unique_id=958701023]
+repeat_size = Vector2(320, 0)
+repeat_times = 2
+limit_begin = Vector2(0, 0)
+limit_end = Vector2(736, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=585004620]
+texture = ExtResource("3_u0a0p")
+centered = false
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1896716845]
 tile_map_data = PackedByteArray("AAAAAAcAAAABAAAAAAABAAcAAAABAAAAAAACAAcAAAABAAAAAAADAAcAAAABAAAAAAAEAAcAAAABAAAAAAAFAAcAAAABAAAAAAAFAAYAAAABAAAAAAAEAAYAAAABAAAAAAAEAAUAAAABAAAAAAAFAAUAAAABAAAAAAAGAAcAAAABAAAAAAAGAAYAAAACAAAAAAAHAAYAAAACAAAAAAAHAAcAAAABAAAAAAAIAAcAAAABAAAAAAAIAAYAAAABAAAAAAAIAAUAAAABAAAAAAAIAAQAAAABAAAAAAAJAAcAAAABAAAAAAAKAAcAAAABAAAAAAALAAcAAAABAAAAAAAMAAcAAAABAAAAAAANAAcAAAABAAAAAAAOAAcAAAABAAAAAAAPAAcAAAABAAAAAAAQAAcAAAABAAAAAAAAAAAAAAACAAAABAABAAAAAAACAAAABAACAAAAAAACAAAABAADAAAAAAACAAAABAAEAAAAAAACAAAABAAFAAAAAAACAAAABAAGAAAAAAACAAAABAAHAAAAAAACAAAABAAKAAYAAAACAAAAAAAJAAYAAAACAAAAAAALAAMAAAABAAAAAAAMAAMAAAABAAAAAAAMAAQAAAABAAAAAAALAAQAAAABAAAAAAALAAUAAAABAAAAAAALAAIAAAABAAAAAAAMAAIAAAABAAAAAAALAAYAAAABAAAAAAAIAAAAAAABAAAAAAAIAAEAAAABAAAAAAAOAAAAAAABAAAAAAAPAAAAAAABAAAAAAAQAAAAAAABAAAAAAAQAAEAAAABAAAAAAAPAAEAAAABAAAAAAAOAAEAAAABAAAAAAAOAAIAAAABAAAAAAAPAAIAAAABAAAAAAAQAAIAAAABAAAAAAAQAAMAAAABAAAAAAAPAAMAAAABAAAAAAAOAAMAAAABAAAAAAAOAAQAAAABAAAAAAAPAAQAAAABAAAAAAAQAAQAAAABAAAAAAAQAAUAAAABAAAAAAAPAAUAAAABAAAAAAAOAAUAAAABAAAAAAAJAAAAAAABAAAAAAAKAAAAAAABAAAAAAALAAAAAAABAAAAAAAMAAAAAAABAAAAAAANAAAAAAABAAAAAAD//wAAAAABAAAAAAD//wEAAAABAAAAAAD//wIAAAABAAAAAAD//wMAAAABAAAAAAD//wQAAAABAAAAAAD//wUAAAABAAAAAAD//wYAAAABAAAAAAD//wcAAAABAAAAAAA=")
@@ -106,7 +125,7 @@ shape = SubResource("RectangleShape2D_rus8k")
 
 [node name="Block6" type="StaticBody2D" parent="." unique_id=1881025516]
 position = Vector2(448, 0)
-scale = Vector2(0.6774439, 13.959666)
+scale = Vector2(0.66715854, 13.938045)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Block6" unique_id=586463095]

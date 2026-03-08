@@ -1,9 +1,15 @@
 [gd_scene format=3 uid="uid://cwq62xhb0nfu0"]
 
 [ext_resource type="Script" uid="uid://cxwx55xtlpg5h" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://cdi10vj5tdptb" path="res://sprites/CosmicTrobles_обложка_2.png" id="2_ekxnf"]
 
 [node name="Main_menu" type="Node2D" unique_id=804291048]
 script = ExtResource("1_l6cm7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=971970495]
+scale = Vector2(0.25, 0.33333334)
+texture = ExtResource("2_ekxnf")
+centered = false
 
 [node name="Controler" type="Control" parent="." unique_id=433891321]
 layout_mode = 3
