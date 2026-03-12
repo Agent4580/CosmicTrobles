@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dxha1rqsb6d68"]
+
+[ext_resource type="AudioStream" uid="uid://bter5oddnynlf" path="res://sounds/Музыка_для_game_jam.wav" id="1_ct45l"]
+[ext_resource type="Script" uid="uid://cfusrx8w2fcgd" path="res://scripts/music_background.gd" id="2_y0tfd"]
+
+[node name="Music_background" type="AudioStreamPlayer2D" unique_id=678928059]
+stream = ExtResource("1_ct45l")
+autoplay = true
+script = ExtResource("2_y0tfd")
