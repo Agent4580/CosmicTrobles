@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://vmddyblv3n60"]
 
-[ext_resource type="PackedScene" uid="uid://c62jnkln56ml2" path="res://scenes/cosmonaut.tscn" id="1_014kd"]
+[ext_resource type="PackedScene" uid="uid://c62jnkln56ml2" path="res://scenes/cosmonaut_level1.tscn" id="1_014kd"]
 [ext_resource type="Script" uid="uid://6ypmvrvnc8a4" path="res://scripts/level_1_stage_1.gd" id="1_rus8k"]
 [ext_resource type="TileSet" uid="uid://dbfgb3ypnjp00" path="res://sprites/new_tile_set.tres" id="2_hcax5"]
 [ext_resource type="Texture2D" uid="uid://bopc0uhcdb6c3" path="res://sprites/Фон_для_game_jam.png" id="2_yte3x"]

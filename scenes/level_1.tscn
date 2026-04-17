@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://0u0gywc1mfcc"]
 
-[ext_resource type="PackedScene" uid="uid://c62jnkln56ml2" path="res://scenes/cosmonaut.tscn" id="1_014kd"]
-[ext_resource type="Script" uid="uid://bn8pfa4m6xw68" path="res://scripts/cosmonaut.gd" id="2_bswci"]
+[ext_resource type="PackedScene" uid="uid://c62jnkln56ml2" path="res://scenes/cosmonaut_level1.tscn" id="1_014kd"]
+[ext_resource type="Texture2D" uid="uid://dq148667vr0a7" path="res://sprites/icon.svg" id="2_bswci"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_014kd"]
 size = Vector2(16, 16)
@@ -9,18 +9,12 @@ size = Vector2(16, 16)
 [node name="level1" type="Node2D" unique_id=40074734]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1402213381]
-anchor_mode = 0
+offset = Vector2(320, 200)
 ignore_rotation = false
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_top_margin = 0.87
-drag_bottom_margin = 0.87
 editor_draw_limits = true
-editor_draw_drag_margin = true
 
 [node name="Cosmonaut" parent="." unique_id=263008731 instance=ExtResource("1_014kd")]
-position = Vector2(56, 224)
-script = ExtResource("2_bswci")
+position = Vector2(56, 368)
 
 [node name="ceiling" type="StaticBody2D" parent="." unique_id=1380380576]
 position = Vector2(0, -8)
@@ -32,10 +26,33 @@ position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_014kd")
 
 [node name="floor" type="StaticBody2D" parent="." unique_id=1434419184]
-position = Vector2(0, 240)
-scale = Vector2(25.308596, 0.59580636)
+position = Vector2(0, 392)
+scale = Vector2(40.42935, 0.7494346)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor" unique_id=1702594628]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_014kd")
+
+[node name="left_wall(barrier)" type="StaticBody2D" parent="." unique_id=1972802313]
+position = Vector2(-8, 0)
+scale = Vector2(0.6114382, 25.014938)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left_wall(barrier)" unique_id=1965566062]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_014kd")
+
+[node name="left_wall(barrier)2" type="StaticBody2D" parent="." unique_id=205581109]
+position = Vector2(248.00002, 304)
+scale = Vector2(6.85265, 5.442472)
+metadata/_edit_group_ = true
+
+[node name="Icon" type="Sprite2D" parent="left_wall(barrier)2" unique_id=426757208]
+position = Vector2(8, 8)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("2_bswci")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left_wall(barrier)2" unique_id=1547982640]
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_014kd")
