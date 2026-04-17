@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://0u0gywc1mfcc"]
+
+[ext_resource type="PackedScene" uid="uid://c62jnkln56ml2" path="res://scenes/cosmonaut.tscn" id="1_014kd"]
+[ext_resource type="Script" uid="uid://bn8pfa4m6xw68" path="res://scripts/cosmonaut.gd" id="2_bswci"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_014kd"]
+size = Vector2(16, 16)
+
+[node name="level1" type="Node2D" unique_id=40074734]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1402213381]
+anchor_mode = 0
+ignore_rotation = false
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_top_margin = 0.87
+drag_bottom_margin = 0.87
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="Cosmonaut" parent="." unique_id=263008731 instance=ExtResource("1_014kd")]
+position = Vector2(56, 224)
+script = ExtResource("2_bswci")
+
+[node name="ceiling" type="StaticBody2D" parent="." unique_id=1380380576]
+position = Vector2(0, -8)
+scale = Vector2(25.308596, 0.59580636)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ceiling" unique_id=1981202834]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_014kd")
+
+[node name="floor" type="StaticBody2D" parent="." unique_id=1434419184]
+position = Vector2(0, 240)
+scale = Vector2(25.308596, 0.59580636)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor" unique_id=1702594628]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_014kd")
