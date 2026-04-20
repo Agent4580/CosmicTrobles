@@ -10,6 +10,7 @@ func _physics_process(delta: float) -> void:
 	#Если персонаж не на полу:
 	if not is_on_floor():
 		#то начинайте просчитывать гравитацию
+		$AnimatedSprite2D.play('jump')
 		velocity += get_gravity() * delta
 		
 	#если персонаж на земле и ничего не нажато:
@@ -45,7 +46,7 @@ func _physics_process(delta: float) -> void:
 	#если персонаж на полу и просто нажата кнопка прыжка
 	if is_on_floor() and Input.is_action_just_pressed("jump (change_gravity)"):
 		#то проиграйте анимацию и прыгните
-		$AnimatedSprite2D.play('jump')
+		
 		velocity.y = JUMP_FORCE 
 		
 	#метод расчета физики героя
