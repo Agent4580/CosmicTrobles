@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Game_jam_project"
+config/name="CosmicTroubles"
 run/main_scene="uid://cwq62xhb0nfu0"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://sprites/icon.svg"
