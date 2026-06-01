@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://8t0od0i2yjfy"]
+
+[ext_resource type="SpriteFrames" uid="uid://c6abjunsspnlu" path="res://sprites/cosmonaut_spriteset.tres" id="1_4uulb"]
+[ext_resource type="Script" uid="uid://ctby8lnquav5x" path="res://scripts/cosmonaut_level_2.gd" id="1_hvl61"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hvl61"]
+radius = 8.0
+height = 32.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o3wjy"]
+size = Vector2(16, 32)
+
+[node name="cosmonaut_level_2" type="CharacterBody2D" unique_id=931851219]
+script = ExtResource("1_hvl61")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=998158946]
+texture_filter = 1
+sprite_frames = ExtResource("1_4uulb")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=794854862]
+shape = SubResource("CapsuleShape2D_hvl61")
+
+[node name="Gravity" type="Area2D" parent="." unique_id=1711377591]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gravity" unique_id=1626139039]
+shape = SubResource("RectangleShape2D_o3wjy")

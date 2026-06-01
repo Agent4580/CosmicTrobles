@@ -1,0 +1,182 @@
+[gd_scene format=3 uid="uid://guxhkcneelu7"]
+
+[ext_resource type="PackedScene" uid="uid://c62jnkln56ml2" path="res://scenes/cosmonaut_level1.tscn" id="1_ab4qm"]
+[ext_resource type="Script" uid="uid://rv6ds75qbqwh" path="res://scripts/level_1_1.gd" id="1_y2kk7"]
+[ext_resource type="Texture2D" uid="uid://dq148667vr0a7" path="res://sprites/icon.svg" id="2_hpwl4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_064gf"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_io50f"]
+size = Vector2(256, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y2kk7"]
+size = Vector2(256, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hpwl4"]
+size = Vector2(16, 128)
+
+[sub_resource type="Animation" id="Animation_y2kk7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_hpwl4"]
+resource_name = "fade out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_064gf"]
+_data = {
+&"RESET": SubResource("Animation_y2kk7"),
+&"fade out": SubResource("Animation_hpwl4")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7o8d"]
+size = Vector2(16, 19.188057)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pi2xh"]
+size = Vector2(16, 16)
+
+[node name="Level_1_1" type="Node2D" unique_id=1459237224]
+script = ExtResource("1_y2kk7")
+
+[node name="toilet" type="StaticBody2D" parent="." unique_id=1186733844]
+position = Vector2(224.00002, 80.00001)
+scale = Vector2(2.0563614, 3.036722)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="toilet" unique_id=1152348129]
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("2_hpwl4")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="toilet" unique_id=2004218990]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_064gf")
+
+[node name="Cosmonaut" parent="." unique_id=263008731 groups=["Player"] instance=ExtResource("1_ab4qm")]
+position = Vector2(40, 104)
+
+[node name="Camera2D" type="Camera2D" parent="Cosmonaut" unique_id=2103575377]
+zoom = Vector2(2.5, 3)
+limit_left = 0
+limit_top = 0
+limit_right = 256
+limit_bottom = 144
+
+[node name="ceilling" type="StaticBody2D" parent="." unique_id=1324675583]
+position = Vector2(0, -16)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ceilling" unique_id=1490663852]
+position = Vector2(128, 8)
+shape = SubResource("RectangleShape2D_io50f")
+
+[node name="floor" type="StaticBody2D" parent="." unique_id=436491348]
+position = Vector2(0, 128)
+metadata/_edit_group_ = true
+
+[node name="floor" type="CollisionShape2D" parent="floor" unique_id=337514722]
+position = Vector2(128, 8)
+shape = SubResource("RectangleShape2D_y2kk7")
+
+[node name="wall" type="StaticBody2D" parent="." unique_id=397612052]
+position = Vector2(-16, 0)
+metadata/_edit_group_ = true
+
+[node name="floor" type="CollisionShape2D" parent="wall" unique_id=2111516808]
+position = Vector2(8, 64)
+shape = SubResource("RectangleShape2D_hpwl4")
+
+[node name="wall2" type="StaticBody2D" parent="." unique_id=1950063472]
+position = Vector2(256, 0)
+metadata/_edit_group_ = true
+
+[node name="floor" type="CollisionShape2D" parent="wall2" unique_id=796715744]
+position = Vector2(8, 64)
+shape = SubResource("RectangleShape2D_hpwl4")
+
+[node name="cabins" type="Area2D" parent="." unique_id=669247005]
+position = Vector2(183.99998, 48)
+scale = Vector2(4.4774647, 5.018731)
+metadata/_edit_group_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="cabins" unique_id=1648799773]
+root_node = NodePath("../Sprite2D")
+libraries/ = SubResource("AnimationLibrary_064gf")
+
+[node name="Sprite2D" type="Sprite2D" parent="cabins" unique_id=1346762482]
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("2_hpwl4")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cabins" unique_id=1829448286]
+position = Vector2(8.000008, 6.4059715)
+shape = SubResource("RectangleShape2D_l7o8d")
+
+[node name="next_level" type="Area2D" parent="." unique_id=1693141932]
+position = Vector2(240, 40)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="next_level" unique_id=1307273575]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_pi2xh")
+
+[node name="next_level2" type="Label" parent="." unique_id=53728997]
+visible = false
+offset_left = 184.0
+offset_top = 16.0
+offset_right = 354.0
+offset_bottom = 39.0
+scale = Vector2(0.40812594, 0.58966774)
+text = "Следующий уровень"
+
+[node name="Label" type="Label" parent="." unique_id=1828753997]
+offset_left = 8.0
+offset_top = 152.0
+offset_right = 354.0
+offset_bottom = 201.0
+text = "Это будет туалет со множеством кабинок, 
+но их не видно из-за перспективы"
+
+[node name="Label2" type="Label" parent="." unique_id=40220393]
+offset_left = 8.0
+offset_top = 208.0
+offset_right = 354.0
+offset_bottom = 257.0
+text = "Выходом из уровня будет служить вентиляция
+над одной из кабинок"
+
+[node name="Label3" type="Label" parent="." unique_id=1251950771]
+offset_left = 8.0
+offset_top = 256.0
+offset_right = 392.0
+offset_bottom = 305.0
+text = "Вести он будет в инженерный сектор, где будет доступна
+новая способность"
+
+[connection signal="body_entered" from="cabins" to="." method="_on_cabins_body_entered"]
+[connection signal="body_exited" from="cabins" to="." method="_on_cabins_body_exited"]
+[connection signal="body_entered" from="next_level" to="." method="_on_next_level_body_entered"]
+[connection signal="body_exited" from="next_level" to="." method="_on_next_level_body_exited"]

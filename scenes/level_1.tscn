@@ -1,15 +1,20 @@
 [gd_scene format=3 uid="uid://0u0gywc1mfcc"]
 
 [ext_resource type="PackedScene" uid="uid://c62jnkln56ml2" path="res://scenes/cosmonaut_level1.tscn" id="1_014kd"]
+[ext_resource type="Script" uid="uid://c1tbeox76oj2r" path="res://scripts/level_1.gd" id="1_rus8k"]
 [ext_resource type="Texture2D" uid="uid://dq148667vr0a7" path="res://sprites/icon.svg" id="2_bswci"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_014kd"]
 size = Vector2(16, 16)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rus8k"]
+size = Vector2(35.526306, 32)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bswci"]
-size = Vector2(29, 32)
+size = Vector2(35.526306, 32)
 
 [node name="level1" type="Node2D" unique_id=40074734]
+script = ExtResource("1_rus8k")
 
 [node name="ceiling" type="StaticBody2D" parent="." unique_id=1380380576]
 position = Vector2(0, -8)
@@ -410,20 +415,6 @@ texture = ExtResource("2_bswci")
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_014kd")
 
-[node name="Cosmonaut" parent="." unique_id=263008731 instance=ExtResource("1_014kd")]
-position = Vector2(56, 368)
-
-[node name="Camera2D" type="Camera2D" parent="Cosmonaut" unique_id=334526457]
-limit_enabled = false
-position_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_left_margin = 0.0
-drag_top_margin = 0.1
-drag_right_margin = 0.0
-drag_bottom_margin = 0.1
-editor_draw_drag_margin = true
-
 [node name="WC" type="Area2D" parent="." unique_id=1415742546]
 position = Vector2(3736, 280)
 scale = Vector2(2.7022252, 3.2558959)
@@ -436,8 +427,8 @@ texture = ExtResource("2_bswci")
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WC" unique_id=1787994816]
-position = Vector2(14.750488, 17.948334)
-shape = SubResource("RectangleShape2D_bswci")
+position = Vector2(14.80249, 17.948318)
+shape = SubResource("RectangleShape2D_rus8k")
 
 [node name="Door2" type="Area2D" parent="." unique_id=65636621]
 position = Vector2(4240, 280)
@@ -453,6 +444,20 @@ centered = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door2" unique_id=592625794]
 position = Vector2(14.750488, 17.948334)
 shape = SubResource("RectangleShape2D_bswci")
+
+[node name="Cosmonaut" parent="." unique_id=263008731 groups=["Player"] instance=ExtResource("1_014kd")]
+position = Vector2(56, 368)
+
+[node name="Camera2D" type="Camera2D" parent="Cosmonaut" unique_id=334526457]
+limit_enabled = false
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.0
+drag_top_margin = 0.1
+drag_right_margin = 0.0
+drag_bottom_margin = 0.1
+editor_draw_drag_margin = true
 
 [node name="Comment" type="Label" parent="." unique_id=1559941065]
 offset_left = 1368.0
@@ -524,3 +529,5 @@ offset_bottom = 473.0
 text = "Гдето здесь будет находиться погрузочный лифт,
 из которого и выходили все передвижные платформы"
 horizontal_alignment = 1
+
+[connection signal="body_entered" from="WC" to="." method="_on_wc_body_entered"]
