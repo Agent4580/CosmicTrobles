@@ -2,7 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://8t0od0i2yjfy" path="res://scenes/cosmonaut_level_2.tscn" id="1_3bmlt"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3bmlt"]
+size = Vector2(264, 15.999992)
+
 [node name="Level2" type="Node2D" unique_id=1382274769]
 
 [node name="cosmonaut_level_2" parent="." unique_id=931851219 instance=ExtResource("1_3bmlt")]
 position = Vector2(64, 352)
+
+[node name="floor" type="StaticBody2D" parent="." unique_id=972352734]
+position = Vector2(0, 384)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor" unique_id=1671119713]
+position = Vector2(132, 8)
+shape = SubResource("RectangleShape2D_3bmlt")
