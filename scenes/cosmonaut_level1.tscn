@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c62jnkln56ml2"]
+
+[ext_resource type="Script" uid="uid://bn8pfa4m6xw68" path="res://scripts/cosmonaut_level1.gd" id="1_5cu2o"]
+[ext_resource type="SpriteFrames" uid="uid://c6abjunsspnlu" path="res://sprites/cosmonaut_spriteset.tres" id="2_krchs"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5cu2o"]
+radius = 9.0
+height = 32.0
+
+[node name="Cosmonaut" type="CharacterBody2D" unique_id=263008731]
+script = ExtResource("1_5cu2o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1055512008]
+texture_filter = 1
+sprite_frames = ExtResource("2_krchs")
+animation = &"idle"
+frame = 7
+frame_progress = 0.14854135
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=746816376]
+shape = SubResource("CapsuleShape2D_5cu2o")
